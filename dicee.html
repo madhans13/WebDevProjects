@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+      <h5>Who won?</h5>
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice1.png"/>
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice1.png"/>
+      </div>
+    </div>
+
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+    <script>
+      function random(){
+        return Math.random()*6+1;
+      }
+      var dice1=Math.floor(random());
+      var dice2=Math.floor(random());
+      document.querySelector(".img1").src="images/dice"+dice1+".png";
+      document.querySelector(".img2").src="images/dice"+dice2+".png";
+      var max=Math.max(dice1,dice2);
+      document.querySelector("h5").innerHTML="Player "+max+" Won";
+    </script>
+  </body>
+</html>
